@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Q-mu-Dmi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Medea Feed-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MediaFeedViewController" customModule="AVFoundation_MediaFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-9R-HhV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mdF-79-Aku">
+                                    <size key="itemSize" width="297" height="346"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mediaCell" id="Ijf-hy-CUU" customClass="MediaCell" customModule="AVFoundation_MediaFeed" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="50" width="340" height="340"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VKB-fi-1Yz">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="340"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uUg-SV-hvT">
+                                                    <rect key="frame" x="0.0" y="2" width="340" height="336"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="uUg-SV-hvT" secondAttribute="bottom" id="7gr-5T-OE0"/>
+                                                <constraint firstItem="uUg-SV-hvT" firstAttribute="leading" secondItem="VKB-fi-1Yz" secondAttribute="leading" id="QHe-xc-86s"/>
+                                                <constraint firstItem="uUg-SV-hvT" firstAttribute="top" secondItem="VKB-fi-1Yz" secondAttribute="top" id="ikB-02-j5b"/>
+                                                <constraint firstAttribute="trailing" secondItem="uUg-SV-hvT" secondAttribute="trailing" id="wP8-2z-jMC"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="340" height="340"/>
+                                        <connections>
+                                            <outlet property="mediaImageView" destination="uUg-SV-hvT" id="Ni3-l9-T4s"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="Lk8-zv-WyW" customClass="HeaderView" customModule="AVFoundation_MediaFeed" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5gu-9R-HhV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mgt-aF-AUZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5gu-9R-HhV" secondAttribute="bottom" id="Mnc-7e-GDZ"/>
+                            <constraint firstItem="5gu-9R-HhV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d0T-6F-NBD"/>
+                            <constraint firstItem="5gu-9R-HhV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="w8u-ML-qbk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Medea Feed" id="wDL-5z-oUc">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="photo.fill" catalog="system" id="LXW-Jd-eSI">
+                                <connections>
+                                    <action selector="photoLibraryButtonPressed:" destination="BYZ-38-t0r" id="OkH-Xa-Xnz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="video.fill" catalog="system" id="Iyl-HH-K61">
+                                <connections>
+                                    <action selector="videoButtonPressed:" destination="BYZ-38-t0r" id="tSz-z7-rBw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="5gu-9R-HhV" id="rkh-4L-jnK"/>
+                        <outlet property="photoLibraryButton" destination="LXW-Jd-eSI" id="P7k-xk-d0U"/>
+                        <outlet property="videoButton" destination="Iyl-HH-K61" id="ZgZ-3P-2Zy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iNj-pT-jlg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M4Q-mu-Dmi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2d8-w0-gcQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Stu-49-zVE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaN-iz-ofK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <image name="video" catalog="system" width="128" height="83"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+    </resources>
+</document>
