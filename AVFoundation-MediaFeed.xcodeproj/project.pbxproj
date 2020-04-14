@@ -17,6 +17,9 @@
 		6CE96CE72444C07F0036399D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CE62444C07F0036399D /* HeaderView.swift */; };
 		6CE96CE92444C4030036399D /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CE82444C4030036399D /* MediaObject.swift */; };
 		6CE96CEF2444EB640036399D /* URL+VideoPlayerThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CEE2444EB640036399D /* URL+VideoPlayerThumbnail.swift */; };
+		6CE96CF2244619190036399D /* MediaFeedDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CF0244619190036399D /* MediaFeedDataModel.xcdatamodeld */; };
+		6CE96CF524461BC60036399D /* CDMediaObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CF324461BC60036399D /* CDMediaObject+CoreDataClass.swift */; };
+		6CE96CF624461BC60036399D /* CDMediaObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96CF424461BC60036399D /* CDMediaObject+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		6CE96CE62444C07F0036399D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6CE96CE82444C4030036399D /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		6CE96CEE2444EB640036399D /* URL+VideoPlayerThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+VideoPlayerThumbnail.swift"; sourceTree = "<group>"; };
+		6CE96CF1244619190036399D /* MediaFeedDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaFeedDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6CE96CF324461BC60036399D /* CDMediaObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		6CE96CF424461BC60036399D /* CDMediaObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,10 @@
 		6CE96CEA2444C4090036399D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CE96CF324461BC60036399D /* CDMediaObject+CoreDataClass.swift */,
+				6CE96CF424461BC60036399D /* CDMediaObject+CoreDataProperties.swift */,
 				6CE96CE82444C4030036399D /* MediaObject.swift */,
+				6CE96CF0244619190036399D /* MediaFeedDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,10 +193,13 @@
 			files = (
 				6CE96CE72444C07F0036399D /* HeaderView.swift in Sources */,
 				6CE96CEF2444EB640036399D /* URL+VideoPlayerThumbnail.swift in Sources */,
+				6CE96CF624461BC60036399D /* CDMediaObject+CoreDataProperties.swift in Sources */,
 				6CE96CE92444C4030036399D /* MediaObject.swift in Sources */,
 				6CE96CD52444B9A60036399D /* MediaFeedViewController.swift in Sources */,
 				6CE96CD12444B9A60036399D /* AppDelegate.swift in Sources */,
 				6CE96CE52444C02F0036399D /* MediaCell.swift in Sources */,
+				6CE96CF2244619190036399D /* MediaFeedDataModel.xcdatamodeld in Sources */,
+				6CE96CF524461BC60036399D /* CDMediaObject+CoreDataClass.swift in Sources */,
 				6CE96CD32444B9A60036399D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6CE96CF0244619190036399D /* MediaFeedDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6CE96CF1244619190036399D /* MediaFeedDataModel.xcdatamodel */,
+			);
+			currentVersion = 6CE96CF1244619190036399D /* MediaFeedDataModel.xcdatamodel */;
+			path = MediaFeedDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6CE96CC52444B9A60036399D /* Project object */;
 }

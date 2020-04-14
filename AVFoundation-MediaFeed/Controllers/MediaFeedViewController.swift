@@ -75,7 +75,8 @@ class MediaFeedViewController: UIViewController {
             
             // add the playerLayer to the headerView's layer
             view.layer.addSublayer(playerLayer)
-            player.volume = 0
+            //player.volume = 0
+            player.isMuted = true
             player.play()
         }
     }
