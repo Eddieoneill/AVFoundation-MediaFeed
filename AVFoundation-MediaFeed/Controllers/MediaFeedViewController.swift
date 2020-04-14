@@ -45,12 +45,39 @@ class MediaFeedViewController: UIViewController {
     }
 
     @IBAction func videoButtonPressed(_ sender: UIBarButtonItem) {
-        
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true)
     }
     
     @IBAction func photoLibraryButtonPressed(_ sender: UIBarButtonItem) {
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true)
+    }
+    
+    private func playRandomVideo(in view: UIView) {
+        // we want all non-nil media objects from the mediaObjects array
+        // compactMap - because it returns all non-nil values
+        let videoURLs = mediaObjects.compactMap { $0.videoURL }
+        
+        // get a random video URL
+        if let videoURL = videoURLs.randomElement() {
+            let player = AVPlayer(url: videoURL)
+            
+            // create a sublayer
+            let playerLayer = AVPlayerLayer(player: player)
+            // set its frame
+            playerLayer.frame = view.bounds // take up the entire headerView
+            // set video aspect ratio
+            playerLayer.videoGravity = .resizeAspect
+            
+            // remove all sublayers from the headerView
+            view.layer.sublayers?.removeAll()
+            
+            // add the playerLayer to the headerView's layer
+            view.layer.addSublayer(playerLayer)
+            player.volume = 0
+            player.play()
+        }
     }
 }
 
@@ -73,6 +100,7 @@ extension MediaFeedViewController: UICollectionViewDataSource {
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? HeaderView else {
             fatalError("could not dequeue a HeaderView")
         }
+        playRandomVideo(in: headerView)
         return headerView // is of the UICollectionReuseableView
     }
     
